@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Prism;
+using Prism.Ioc;
 using UIKit;
 
 namespace DineNDash.iOS
@@ -26,6 +28,14 @@ namespace DineNDash.iOS
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+    }
+
+    public class iOSInitializer : IPlatformInitializer
+    {
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+
         }
     }
 }
