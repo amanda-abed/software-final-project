@@ -20,7 +20,7 @@ namespace DineNDash
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnInitialized)})");
             InitializeComponent();
 
-            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(PaymentPage)}");
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ConfirmationPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -31,6 +31,8 @@ namespace DineNDash
             containerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();
             containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
             containerRegistry.RegisterForNavigation<CreditInfoPage, CreditInfoPageViewModel>();
+            containerRegistry.RegisterForNavigation<ConfirmationPage, ConfirmationPageViewModel>();
+            containerRegistry.RegisterForNavigation<RatingsPage, RatingsPageViewModel>();
         }
 
         protected override void OnStart()
