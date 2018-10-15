@@ -5,10 +5,49 @@
     xmlns:local="clr-namespace:DineNDash"
     x:Class="DineNDash.Views.MainPage">
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label
-            Text="Welcome to Xamarin.Forms!"
+        <Grid
+            VerticalOptions="Center"
             HorizontalOptions="Center"
-            VerticalOptions="CenterAndExpand" />
+            Padding="0, 50, 0, 30"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Text="Welcome to Dine &amp; Dash!"
+                Grid.Row="0"
+                Grid.Column="0"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                FontSize="Large"/>
+            <Label
+                Text="To begin your order please select a restaurant"
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"/>
+            <!--<SearchBar
+                Text="{Binding EnterRestaurant}"
+                Placeholder="Search Restaurant"
+                PlaceholderColor="Gray"
+                Grid.Row="2"
+                Grid.Column="0"
+                SearchButtonPressed="{Binding GoToSearch}"
+                />-->
+            <Button
+                Text="Search by Map"
+                Command="{Binding GoToMapCommand}"
+                Grid.Row="3"
+                Grid.Column="0"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                />
+        </Grid>
     </StackLayout>
 </ContentPage>

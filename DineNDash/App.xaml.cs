@@ -15,18 +15,22 @@ namespace DineNDash
     {
         public App(IPlatformInitializer initializer = null) : base(initializer){}
 
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnInitialized)})");
             InitializeComponent();
 
-            NavigationService.NavigateAsync(nameof(MainPage));
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(PaymentPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)})");
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, DineNDashHomePageViewModel>();
+            containerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();
+            containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
+            containerRegistry.RegisterForNavigation<CreditInfoPage, CreditInfoPageViewModel>();
         }
 
         protected override void OnStart()
