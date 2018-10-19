@@ -20,7 +20,7 @@ namespace DineNDash
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnInitialized)})");
             InitializeComponent();
 
-            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ConfirmationPage)}");
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

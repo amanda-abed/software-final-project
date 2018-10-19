@@ -5,6 +5,7 @@ using System.Linq;
 using Foundation;
 using Prism;
 using Prism.Ioc;
+using Syncfusion.SfRating.XForms.iOS;
 using UIKit;
 
 namespace DineNDash.iOS
@@ -27,6 +28,7 @@ namespace DineNDash.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            new SfRatingRenderer();
             return base.FinishedLaunching(app, options);
         }
     }

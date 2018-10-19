@@ -46,6 +46,7 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Grid.ColumnSpan="4"
+                Text="{Binding NameEntry}"
                 />
             <Label
                 Text="Card Type"
@@ -66,31 +67,47 @@
                 Grid.Column="0"
                 />
             <Entry
-                Placeholder="XXXX XXXX XXXX XXXX"
+                Placeholder="XXXXXXXXXXXXXXXX"
                 Grid.Row="3"
                 Grid.Column="1"
-                Grid.ColumnSpan="4" 
+                Grid.ColumnSpan="4"
+                Text="{Binding CardNumberEntry}"
                 />
             <Label
-                Text="Card Expiration"
+                Text="Month Expiration"
                 Grid.Row="4"
                 Grid.Column="0"
                 />
             <Entry
-                Placeholder="MM/YYYY"
+                Placeholder="MM"
                 Grid.Row="4"
                 Grid.Column="1"
-                Grid.ColumnSpan="2"
+                Text="{Binding CardMonthEntry}"
                 />
+            
+            <Label
+                Text="Year Expiration"
+                Grid.Row="4"
+                Grid.Column="3"
+                />
+            <Entry
+                Placeholder="YYYY"
+                Grid.Row="4"
+                Grid.Column="4"
+                Grid.ColumnSpan="2"
+                Text="{Binding CardYearEntry}"
+                />
+            
             <Label
                 Text="Security Code"
                 Grid.Row="5"
                 Grid.Column="0"
                 />
             <Entry
-                Placeholder="CVC"
+                Placeholder="CVV"
                 Grid.Row="5"
                 Grid.Column="1"
+                Text="{Binding CardSecurityEntry}"
                 />
             
             <Label
@@ -110,6 +127,7 @@
                 Grid.Row="7"
                 Grid.Column="1"
                 Grid.ColumnSpan="3"
+                Text="{Binding AddressEntry}"
                 />
             <Label
                 Text="City"
@@ -121,6 +139,7 @@
                 Grid.Row="8"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
+                Text="{Binding CityEntry}"
                 />
             <Label
                 Text="State"
@@ -131,6 +150,7 @@
                 Placeholder="XX"
                 Grid.Row="8"
                 Grid.Column="4"
+                Text="{Binding StateEntry}"
                 />
             <Label
                 Text="Zip/Postal Code"
@@ -142,12 +162,14 @@
                 Grid.Row="9"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
+                Text="{Binding ZipEntry}"
                 />
             <Button
                 Text="Continue"
                 Grid.Row="10"
                 Grid.Column="0"
                 Grid.ColumnSpan="4"
+                Command="{Binding CreditInfoPageCommand}"
                 />
         </Grid>
     </ContentPage.Content>
