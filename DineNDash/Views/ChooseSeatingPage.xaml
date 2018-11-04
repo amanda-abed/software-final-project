@@ -2,8 +2,9 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="DineNDash.Views.RatingsPage">
+    xmlns:forms="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+    x:Class="DineNDash.Views.ChooseSeatingPage">
     <StackLayout>
-       
+
     </StackLayout>
 </ContentPage>

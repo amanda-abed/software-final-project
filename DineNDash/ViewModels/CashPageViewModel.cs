@@ -3,6 +3,7 @@ using System.Diagnostics;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using Xamarin.Forms;
 
 namespace DineNDash.ViewModels
@@ -10,6 +11,7 @@ namespace DineNDash.ViewModels
     public class CashPageViewModel : BindableBase, INavigationAware
     {
         INavigationService nav_service;
+        IPageDialogService _pageDialogService;
         public DelegateCommand NextPage { get; set; }
 
         private string secret_code;
@@ -19,11 +21,12 @@ namespace DineNDash.ViewModels
             set { SetProperty(ref secret_code, value); }
         }
 
-        public CashPageViewModel(INavigationService navigationService)
+        public CashPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(CashPageViewModel)}:  ctor");
 
             nav_service = navigationService;
+            _pageDialogService = pageDialogService;
 
             NextPage = new DelegateCommand(OnNextPage);
         }
@@ -32,26 +35,31 @@ namespace DineNDash.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNextPage)}");
 
-            if(secret_code == "!8&v"){
-                await nav_service.NavigateAsync("MainPage", null); //FIX!
+            if(string.IsNullOrEmpty(secret_code)){
+                await _pageDialogService.DisplayAlertAsync("Error", "A server must enter valid code", "Dismiss");
+                return;
+            }
+
+            if (secret_code == "!8&v"){
+                await nav_service.NavigateAsync("ConfirmationPage", null);
             }
             else if(secret_code == "" || secret_code != "!8&v"){
-                //THROW ERROR
-                await nav_service.NavigateAsync("CashPage", null);
+                await _pageDialogService.DisplayAlertAsync("Error", "Incorrect Code", "Try Again");
+                return;
             }
         }
 
-        public void OnNavigatedFrom(NavigationParameters parameters)
+        public void OnNavigatedFrom(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedFrom)}");
         }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
+        public void OnNavigatedTo(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
         }
 
-        public void OnNavigatingTo(NavigationParameters parameters)
+        public void OnNavigatingTo(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
         }

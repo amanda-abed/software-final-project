@@ -5,7 +5,6 @@ using System.Linq;
 using Foundation;
 using Prism;
 using Prism.Ioc;
-using Syncfusion.SfRating.XForms.iOS;
 using UIKit;
 
 namespace DineNDash.iOS
@@ -26,9 +25,11 @@ namespace DineNDash.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+
             LoadApplication(new App());
 
-            new SfRatingRenderer();
             return base.FinishedLaunching(app, options);
         }
     }

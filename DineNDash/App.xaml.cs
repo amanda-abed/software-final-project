@@ -28,11 +28,13 @@ namespace DineNDash
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)})");
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, DineNDashHomePageViewModel>();
+            containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
             containerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();
             containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
             containerRegistry.RegisterForNavigation<CreditInfoPage, CreditInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<ConfirmationPage, ConfirmationPageViewModel>();
             containerRegistry.RegisterForNavigation<RatingsPage, RatingsPageViewModel>();
+            containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
         }
 
         protected override void OnStart()

@@ -6,18 +6,22 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using Xamarin.Forms;
 using DineNDash.Views;
+using Prism.Services;
 
 namespace DineNDash.ViewModels
 {
     public class PaymentPageViewModel : BindableBase, INavigationAware
     {
         INavigationService _navigationService;
+        IPageDialogService displayMessage;
 
         public DelegateCommand ContinueToPayment { get; set; }
 
-        public PaymentPageViewModel(INavigationService navigationService)
+        public PaymentPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
         {
             _navigationService = navigationService;
+            displayMessage = pageDialogService;
+
             _methods = new List<string>()
             {
                 "Cash",
@@ -30,6 +34,11 @@ namespace DineNDash.ViewModels
         private async void GoToPayment()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToPayment)}");
+
+            if(string.IsNullOrEmpty(selectedMethod)){
+                await displayMessage.DisplayAlertAsync("Error", "You must choose a payment method", "Dismiss");
+                return;
+            }
 
             if (selectedMethod == "Credit Card")
             {
@@ -54,17 +63,17 @@ namespace DineNDash.ViewModels
             set { SetProperty(ref selectedMethod, value); }
         }
 
-        public void OnNavigatedFrom(NavigationParameters parameters)
+        public void OnNavigatedFrom(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedFrom)}");
         }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
+        public void OnNavigatedTo(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
         }
 
-        public void OnNavigatingTo(NavigationParameters parameters)
+        public void OnNavigatingTo(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
         }

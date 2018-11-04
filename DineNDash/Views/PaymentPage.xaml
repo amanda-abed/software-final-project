@@ -3,9 +3,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DineNDash.Views.PaymentPage">
-    <StackLayout>
+    <StackLayout
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="CenterAndExpand">
         <Grid
-            VerticalOptions="Center"
+            VerticalOptions="FillAndExpand"
             HorizontalOptions="Center"
             Padding="5, 50, 5, 30">
             <Grid.RowDefinitions>
@@ -22,18 +24,21 @@
                 Text="What is your payment method?"
                 Grid.Row="0"
                 Grid.Column="0"
-                Grid.ColumnSpan="2"
+                Grid.ColumnSpan="3"
                 HorizontalTextAlignment="Center"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
                 FontAttributes="Bold"
-                />
-            
+                />       
             <Picker
                 Title="Select Payment Method"
                 ItemsSource="{Binding Methods}"
                 SelectedItem="{Binding SelectedMethod}"
                 Grid.Row="1"
                 Grid.Column="0"
-                Grid.ColumnSpan="2"
+                Grid.ColumnSpan="3"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
                 />
             
             <Button

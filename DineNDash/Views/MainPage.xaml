@@ -3,8 +3,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:DineNDash"
-    x:Class="DineNDash.Views.MainPage">
-    <StackLayout>
+    x:Class="DineNDash.Views.MainPage"
+    NavigationPage.HasNavigationBar="false">
+    <StackLayout
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand">
         <Grid
             VerticalOptions="Center"
             HorizontalOptions="Center"

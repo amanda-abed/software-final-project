@@ -147,18 +147,21 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
     <PackageReference Include="Prism.Unity.Forms">
-      <Version>7.0.0.396</Version>
+      <Version>7.1.0.431</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.ExternalMaps">
       <Version>4.0.1</Version>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.SfRating">
-      <Version>16.3.0.21</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
       <Version>0.11.0-preview</Version>
+    </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile">
+      <Version>2.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile.Forms">
+      <Version>2.4.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -167,5 +170,13 @@
       <Project>{70B70496-5EBE-414A-8A03-E37C15D72D69}</Project>
       <Name>DineNDash</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drink.png" />
+    <BundleResource Include="Resources\meal.png" />
+    <BundleResource Include="Resources\indivitem.png" />
+    <BundleResource Include="Resources\shoppingcart.png" />
+    <BundleResource Include="Resources\combo2.png" />
+    <BundleResource Include="Resources\combo3.png" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DineNDash.Views.TabMeal">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image
+                Source="combo1.png"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                />
+            <Label
+                Text="Double-Double Burger,&#x0a;French Fries, and Medium Drink&#x0a;$6.90"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center"
+                />
+            <Button
+                Grid.Row="0"
+                Grid.Column="2"
+                Image="shoppingcart.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="{Binding ButtonClicked}"
+                />
+            <Image
+                Source="combo2.png"
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                />
+            <Label
+                Text="Cheeseburger,&#x0a;French Fries, and Medium Drink&#x0a;$5.80"
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center"
+                />
+            <Button
+                Grid.Row="1"
+                Grid.Column="2"
+                Image="shoppingcart.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="{Binding ButtonClicked}"
+                />
+            <Image
+                Source="combo3.png"
+                Grid.Row="2"
+                Grid.Column="0"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                />
+            <Label
+                Text="Hamburger,&#x0a;French Fries, and Medium Drink&#x0a;$5.50"
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center"
+                />
+            <Button
+                Grid.Row="2"
+                Grid.Column="2"
+                Image="shoppingcart.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="{Binding ButtonClicked}"
+                />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

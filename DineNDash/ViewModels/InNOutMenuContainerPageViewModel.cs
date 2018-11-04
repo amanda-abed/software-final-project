@@ -4,11 +4,11 @@ using Xamarin.Forms;
 
 namespace DineNDash.ViewModels
 {
-    public class RatingsPageViewModel : BindableBase
+    public class InNOutMenuContainerPageViewModel : TabbedPage
     {
-        public RatingsPageViewModel()
+        public InNOutMenuContainerPageViewModel()
         {
-
+           
         }
     }
 }

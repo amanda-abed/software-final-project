@@ -15,6 +15,7 @@ namespace DineNDash.ViewModels
         IPageDialogService _pageDialogService;
 
         public DelegateCommand CreditInfoPageCommand { get; set; }
+        public DelegateCommand GoBackToPaymentPageCommand { get; set; }
 
         private string name_entry;
         public string NameEntry
@@ -106,6 +107,14 @@ namespace DineNDash.ViewModels
             };
 
             CreditInfoPageCommand = new DelegateCommand(GoToNextPage);
+            GoBackToPaymentPageCommand = new DelegateCommand(BackToPaymentPage);
+        }
+
+        private async void BackToPaymentPage()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(BackToPaymentPage)}");
+
+            await nav_service.NavigateAsync("PaymentPage", null);
         }
 
         private async void GoToNextPage()
@@ -145,17 +154,17 @@ namespace DineNDash.ViewModels
               }
         }
 
-        public void OnNavigatedFrom(NavigationParameters parameters)
+        public void OnNavigatedFrom(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedFrom)}");
         }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
+        public void OnNavigatedTo(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
         }
 
-        public void OnNavigatingTo(NavigationParameters parameters)
+        public void OnNavigatingTo(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
         }
