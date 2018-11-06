@@ -15,34 +15,19 @@ namespace DineNDash.ViewModels
         {
         }
 
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedFrom)}");
-        }
-
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnNavigatedTo(NavigationParameters parameters)
+        public void OnNavigatedTo(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
         }
 
-        public void OnNavigatedTo(INavigationParameters parameters)
+        public void OnNavigatedFrom(INavigationParameters parameters)
         {
-            throw new NotImplementedException();
-        }
-
-        public void OnNavigatingTo(NavigationParameters parameters)
-        {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedFrom)}");
         }
 
         public void OnNavigatingTo(INavigationParameters parameters)
         {
-            throw new NotImplementedException();
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
         }
     }
 }
