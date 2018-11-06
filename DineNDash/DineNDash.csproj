@@ -24,10 +24,14 @@
     <Compile Remove="Services\IRepository.cs" />
     <Compile Remove="Services\Repository.cs" />
     <Compile Remove="Views\InNOutMenuContainerPage.xaml.cs" />
-    <Compile Remove="Views\TabDrink.xaml.cs" />
     <Compile Remove="Views\TabIndividualItem.xaml.cs" />
-    <Compile Remove="Views\TabMeal.xaml.cs" />
     <Compile Remove="ViewModels\InNOutMenuContainerPageViewModel.cs" />
+    <Compile Remove="Views\FirstMenuPage.cs" />
+    <Compile Remove="ViewModels\FirstMenuPageViewModel.cs" />
+    <Compile Remove="Views\TabDrink.xaml.cs" />
+    <Compile Remove="Views\TabIndiv.xaml.cs" />
+    <Compile Remove="Views\FirstMenuPage.xaml.cs" />
+    <Compile Remove="Views\TabMeal.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\ChooseSeatingPage.xaml" />
@@ -35,9 +39,11 @@
   <ItemGroup>
     <EmbeddedResource Remove="Views\ChooseSeatingPage.xaml" />
     <EmbeddedResource Remove="Views\TabIndividualItem.xaml" />
-    <EmbeddedResource Remove="Views\TabMeal.xaml" />
     <EmbeddedResource Remove="Views\InNOutMenuContainerPage.xaml" />
     <EmbeddedResource Remove="Views\TabDrink.xaml" />
+    <EmbeddedResource Remove="Views\TabIndiv.xaml" />
+    <EmbeddedResource Remove="Views\TabMeal.xaml" />
+    <EmbeddedResource Remove="Views\FirstMenuPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ChooseSeatingPage.xaml">

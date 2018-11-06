@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace DineNDash.Views
 {
-    public partial class TabMeal : ContentPage
+    public partial class FirstMenuPage : TabbedPage
     {
-        public TabMeal()
+        public FirstMenuPage()
         {
             InitializeComponent();
         }

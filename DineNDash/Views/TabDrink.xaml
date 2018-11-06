@@ -1,53 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DineNDash.Views.TabDrink">
     <ContentPage.Content>
-        <!--
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Label
-                Text="SM&#x0a;$1.50"
-                Grid.Row="0"
-                Grid.Column="0"
-                HorizontalTextAlignment="Center"
-                />
-            <Label
-                Text="MED&#x0a;$1.65"
-                Grid.Row="0"
-                Grid.Column="1"
-                HorizontalTextAlignment="Center"
-                />
-            <Label
-                Text="LG&#x0a;$1.85"
-                Grid.Row="0"
-                Grid.Column="2"
-                HorizontalTextAlignment="Center"
-                />
-            <Label
-                Text="X-LG&#x0a;$2.05"
-                Grid.Row="0"
-                Grid.Column="3"
-                HorizontalTextAlignment="Center"
-                />
-        </Grid>-->
     </ContentPage.Content>
 </ContentPage>
