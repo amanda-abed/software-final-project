@@ -175,8 +175,9 @@
     <BundleResource Include="Resources\drink.png" />
     <BundleResource Include="Resources\meal.png" />
     <BundleResource Include="Resources\indivitem.png" />
-    <BundleResource Include="Resources\shoppingcart.png" />
     <BundleResource Include="Resources\combo2.png" />
     <BundleResource Include="Resources\combo3.png" />
+    <BundleResource Include="Resources\combo1.png" />
+    <BundleResource Include="Resources\shoppingcart.png" />
   </ItemGroup>
 </Project>

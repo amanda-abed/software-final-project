@@ -15,6 +15,7 @@
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
+    <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\RestaurantName.cs" />
@@ -28,10 +29,8 @@
     <Compile Remove="ViewModels\InNOutMenuContainerPageViewModel.cs" />
     <Compile Remove="Views\FirstMenuPage.cs" />
     <Compile Remove="ViewModels\FirstMenuPageViewModel.cs" />
-    <Compile Remove="Views\TabDrink.xaml.cs" />
     <Compile Remove="Views\TabIndiv.xaml.cs" />
     <Compile Remove="Views\FirstMenuPage.xaml.cs" />
-    <Compile Remove="Views\TabMeal.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\ChooseSeatingPage.xaml" />
@@ -40,9 +39,7 @@
     <EmbeddedResource Remove="Views\ChooseSeatingPage.xaml" />
     <EmbeddedResource Remove="Views\TabIndividualItem.xaml" />
     <EmbeddedResource Remove="Views\InNOutMenuContainerPage.xaml" />
-    <EmbeddedResource Remove="Views\TabDrink.xaml" />
     <EmbeddedResource Remove="Views\TabIndiv.xaml" />
-    <EmbeddedResource Remove="Views\TabMeal.xaml" />
     <EmbeddedResource Remove="Views\FirstMenuPage.xaml" />
   </ItemGroup>
   <ItemGroup>

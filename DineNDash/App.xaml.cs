@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DineNDash.Views;
 using DineNDash.ViewModels;
+using DineNDash.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DineNDash
@@ -23,7 +24,7 @@ namespace DineNDash
             await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        protected override void RegisterTypes(Prism.Ioc.IContainerRegistry containerRegistry)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)})");
             containerRegistry.RegisterForNavigation<NavigationPage>();
@@ -35,6 +36,11 @@ namespace DineNDash
             containerRegistry.RegisterForNavigation<ConfirmationPage, ConfirmationPageViewModel>();
             containerRegistry.RegisterForNavigation<RatingsPage, RatingsPageViewModel>();
             containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
+            containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabMealPage, TabMealPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
+            containerRegistry.RegisterSingleton<IRepository, Repository>();
         }
 
         protected override void OnStart()

@@ -129,16 +129,19 @@ namespace DineNDash.ViewModels
                 return;
             }
             else
-              {
-                 if (cardNumber_entry.Length != 16){
-                          await _pageDialogService.DisplayAlertAsync("Error", "Card Number is invalid", "Dismiss");
-                          return;
-                      }
-                 else if(cardSecurity_entry.Length != 3){
-                          await _pageDialogService.DisplayAlertAsync("Error", "You must enter a valid CVV", "Dismiss");
-                          return;
-                      }
-                else if(cardMonth_entry.Length != 2){
+            {
+                if (cardNumber_entry.Length != 16)
+                {
+                    await _pageDialogService.DisplayAlertAsync("Error", "Card Number is invalid", "Dismiss");
+                    return;
+                }
+                else if (cardSecurity_entry.Length != 3)
+                {
+                    await _pageDialogService.DisplayAlertAsync("Error", "You must enter a valid CVV", "Dismiss");
+                    return;
+                }
+                else if (cardMonth_entry.Length != 2)
+                {
                     await _pageDialogService.DisplayAlertAsync("Error", "You must enter a valid month", "Dismiss");
                     return;
                 }
@@ -149,9 +152,9 @@ namespace DineNDash.ViewModels
                 }
                 else
                 {
-                          await nav_service.NavigateAsync("ConfirmationPage", null);
-                      }
-              }
+                    await nav_service.NavigateAsync("ConfirmationPage", null);
+                }
+            }
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)

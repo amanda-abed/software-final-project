@@ -6,13 +6,16 @@ using System.Linq;
 using Plugin.ExternalMaps;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 
 namespace DineNDash.ViewModels
 {
     public class DineNDashHomePageViewModel : BindableBase
     {
+        INavigationService _navigationService;
         public DelegateCommand GoToMapCommand { get; set; }
         public DelegateCommand searchActivated { get; set; }
+        public DelegateCommand<string> SuggestionTappedCommand { get; set; }
 
         private string enter_restaurant;
         public string EnterRestaurant
@@ -21,24 +24,55 @@ namespace DineNDash.ViewModels
             set { SetProperty(ref enter_restaurant, value); }
         }
 
+        private bool is_visible;
+        public bool IsVisible
+        {
+            get { return is_visible; }
+            set { SetProperty(ref is_visible, value); }
+        }
+
         List<string> restaurants = new List<string>
         {
             "In-N-Out Burger"
         };
 
-        public DineNDashHomePageViewModel()
+        //private List<string> my_restaurant = new List<string>();
+        //public List<string> MyRestaurant
+        //{ get { return my_restaurant; } set { SetProperty(ref my_restaurant, value); } }
+
+        private List<string> _suggestions = new List<string>();
+        public List<string> Suggestions
+        { get { return _suggestions; } set { SetProperty(ref _suggestions, value); } }
+
+        public DineNDashHomePageViewModel(INavigationService navigationService)
         {
             Debug.WriteLine($"**** {this.GetType().Name}: ctor");
 
+            _navigationService = navigationService;
+
             GoToMapCommand = new DelegateCommand(GoToMap);
             searchActivated = new DelegateCommand(GoToSearch);
+            SuggestionTappedCommand = new DelegateCommand<string>(OnSuggestionTapped);
         }
 
         private void GoToSearch()
         {
+            if (enter_restaurant.Length >= 1){
+                Suggestions = restaurants.Where(c => c.ToLower().Contains(enter_restaurant.ToLower())).ToList();
 
+                IsVisible = true;
+            }
+            else{
+                IsVisible = false;
+            }
+        }
 
-//            restaurants.Where(r => r.Contains());
+        private async void OnSuggestionTapped(string suggestionTapped)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnSuggestionTapped)}:  {suggestionTapped}");
+
+            await _navigationService.NavigateAsync("ChooseSeatingPage", null);
+            IsVisible = false;
         }
 
         private void GoToMap()

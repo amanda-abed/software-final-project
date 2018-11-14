@@ -60,6 +60,7 @@ namespace DineNDash.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
         }
+
     }
 }
 

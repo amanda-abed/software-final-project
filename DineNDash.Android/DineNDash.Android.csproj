@@ -94,9 +94,10 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\drink.png" />
     <AndroidResource Include="Resources\drawable\indivitem.png" />
-    <AndroidResource Include="Resources\drawable\shoppingcart.png" />
     <AndroidResource Include="Resources\drawable\combo2.png" />
     <AndroidResource Include="Resources\drawable\combo3.png" />
+    <AndroidResource Include="Resources\drawable\combo1.png" />
+    <AndroidResource Include="Resources\drawable\shoppingcart.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
