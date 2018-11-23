@@ -29,6 +29,7 @@ namespace DineNDash
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)})");
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, DineNDashHomePageViewModel>();
+            containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
             containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
             containerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();
             containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();

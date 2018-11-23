@@ -21,6 +21,8 @@
                     Height="*" />
                 <RowDefinition
                     Height="*" />
+                 <RowDefinition
+                    Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition
@@ -65,6 +67,13 @@
                 Text="Search by Map"
                 Command="{Binding GoToMapCommand}"
                 Grid.Row="2"
+                Grid.Column="0"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand" />
+            <Button
+                Text="Restaurant Side"
+                Command="{Binding GoToRestaurantSide}"
+                Grid.Row="4"
                 Grid.Column="0"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand" />

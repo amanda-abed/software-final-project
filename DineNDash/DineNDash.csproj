@@ -31,6 +31,7 @@
     <Compile Remove="ViewModels\FirstMenuPageViewModel.cs" />
     <Compile Remove="Views\TabIndiv.xaml.cs" />
     <Compile Remove="Views\FirstMenuPage.xaml.cs" />
+    <Compile Remove="Views\RestaurantSidePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\ChooseSeatingPage.xaml" />

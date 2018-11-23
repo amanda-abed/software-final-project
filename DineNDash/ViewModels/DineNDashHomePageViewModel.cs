@@ -13,6 +13,7 @@ namespace DineNDash.ViewModels
     public class DineNDashHomePageViewModel : BindableBase
     {
         INavigationService _navigationService;
+        public DelegateCommand GoToRestaurantSide { get; set; }
         public DelegateCommand GoToMapCommand { get; set; }
         public DelegateCommand searchActivated { get; set; }
         public DelegateCommand<string> SuggestionTappedCommand { get; set; }
@@ -50,9 +51,17 @@ namespace DineNDash.ViewModels
 
             _navigationService = navigationService;
 
+            GoToRestaurantSide = new DelegateCommand(RestaurantSide);
             GoToMapCommand = new DelegateCommand(GoToMap);
             searchActivated = new DelegateCommand(GoToSearch);
             SuggestionTappedCommand = new DelegateCommand<string>(OnSuggestionTapped);
+        }
+
+        private async void RestaurantSide()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RestaurantSide)}");
+
+            await _navigationService.NavigateAsync("RestaurantSidePage", null);
         }
 
         private void GoToSearch()
